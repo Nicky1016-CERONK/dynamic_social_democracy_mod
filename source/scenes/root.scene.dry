@@ -6,7 +6,7 @@ go-to: post_event if started = 1; start_menu if started = 0
 new-page: true
 go-to: start_menu_2
 
-= Social Democracy: An Alternate History
+= True Monopoly: An Alternate Cyberpunk History
 
 @start_menu_2
 
@@ -16,16 +16,7 @@ go-to: start_menu_2
 - @game_over.achievements
 
 @start_1
-on-arrival: player_beg = 1 if not achievement_game_completed
-go-to: start if achievement_game_completed; pls_player if not achievement_game_completed
-
-
-@pls_player
-
-Read.
-
-- @modinfo.infotext: Mod Info - Last Updated 2026/01/25
-
+go-to: start
 
 @start
 on-arrival: {!
