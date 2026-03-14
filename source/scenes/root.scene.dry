@@ -51,30 +51,99 @@ Q.dues = 5;
 Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
+// the state of the party
+// overall dissent reduces every increase in party support.
+Q.b_dissent = 0.05;
+Q.b_dissent_percent = 5;
+Q.m_dissent = 0.1;
+Q.m_dissent_percent = 10;
+Q.kadet_dissent = 0.05;
+Q.kadet_dissent_percent = 5;
+
 // factions
-Q.factions = ['left', 'center', 'labor', 'reformist', 'neorevisionist', 'social_patriot'];
-// should this be normalized to 100%?
-Q.left_strength = 15;
-Q.left_dissent = 20;
-Q.center_strength = 30;
-Q.center_dissent = 0;
-Q.labor_strength = 25;
-Q.labor_dissent = 5;
-Q.reformist_strength = 25;
-Q.reformist_dissent = 5;
-Q.neorevisionist_strength = 5;
-Q.neorevisionist_dissent = 10;
-Q.social_patriot_strength = 0
-Q.social_patriot_dissent = 0;
+// independent internals
+Q.i_factions = ['socialist', 'green', 'industrialist', 'liberal'];
+Q.socialist_strength = 20;
+Q.socialist_dissent = 10;
+Q.green_strength = 60;
+Q.green_dissent = 0;
+Q.industrialist_strength = 20;
+Q.industrialist_dissent = 10;
+Q.liberal_strength = 0;
+Q.liberal_dissent = 0;
+Q.liberal_split = 0;
+Q.industrialist_split = 0;
+Q.green_split = 0;
+Q.b_war_policy = 2;
+Q.b_industrial_policy = 1;
+Q.b_prov_gov_policy = 3;
+Q.b_land_policy = 2;
+Q.b_agricultural_policy = 2;
+Q.b_nationality_policy = 2;
+// organizations among the workers and soldiers...
+Q.b_workers_org = 1;
+Q.b_soldiers_org = 1;
+
+// devolutionist internals
+Q.d_factions = ['republican', 'liberal', 'balkanizationist', 'conservative'];
+Q.republican_strength = 20;
+Q.republican_dissent = 30;
+Q.liberal_strength = 80;
+Q.liberal_dissent = 10;
+Q.balkanizationist_strength = 30;
+Q.balkanizationist_dissent = 35;
+Q.balkanizationist_split = 0;
+Q.liberal_split = 0;
+// nationality policies:
+// 0 = russian unity, 1 = national personal autonomy, 2 = federalism, 3 = self-determination
+Q.m_nationality_policy = 1;
+// -1 = laissez-faire, 0 = trade unions, 1 = worker supervision, 2 = syndicalism, 3 = state ownership
+// more is more left-wing
+Q.m_industrial_policy = 0;
+// -1 = liberal coalition, 0 = democratic coalition, 1 = external support, 2 = opposition, 3 = socialist coalition, 4 = armed overthrow
+Q.m_prov_gov_policy = 1;
+Q.m_workers_org = 1;
+Q.m_soldiers_org = 0;
+
+// sr internals
+// sr leadership is defensist
+Q.sr_leadership = 0;
+// taking a nonaligned position...
+Q.sr_independent = 0;
+Q.sr_factions = ['left_sr', 'center_sr', 'right_sr'];
+Q.left_sr_strength = 20;
+Q.left_sr_dissent = 40;
+Q.center_sr_strength = 30;
+Q.center_sr_dissent = 20;
+Q.right_sr_strength = 50;
+Q.right_sr_dissent = 10;
+Q.left_sr_split = 0;
+Q.right_sr_split = 0;
+// policies
+Q.sr_war_policy = 1;
+Q.sr_land_policy = 2;
+Q.sr_agricultural_policy = 1;
+Q.sr_nationality_policy = 2;
+Q.sr_prov_gov_policy = 1;
+Q.sr_industrial_policy = 0;
+Q.sr_workers_org = 0;
+Q.sr_soldiers_org = 1;
+Q.sr_rural_org = 1;
+
+// inter-party relations
+// triangle:
+// f -> i -> d -> t -> c -> l
+Q.m_b_relation = 40;
+Q.m_sr_relation = 55;
+Q.b_sr_relation = 35;
+Q.b_k_relation = 20;
+Q.sr_k_relation = 40;
 
 // secret events...
 Q.unions_independent = 0;
 Q.centrists_resign = 0;
 Q.left_split = 0;
 Q.reformists_resigned = 0;
-
-// have we discovered neorevisionism?
-Q.neorevisionism = 0;
 
 Q.social_patriot = 0;
 
